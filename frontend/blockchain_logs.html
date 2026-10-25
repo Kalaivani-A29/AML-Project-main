@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blockchain Logs | AML Sentinel</title>
+    <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div class="brand-block">
+                <div class="brand-mark">AI</div>
+                <div>
+                    <p class="eyebrow">Fintech Security</p>
+                    <h1>AML Sentinel</h1>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="/dashboard" class="nav-item">Dashboard</a>
+                <a href="/transactions" class="nav-item">Transactions</a>
+                <a href="/alerts" class="nav-item">Alerts</a>
+                <a href="/blockchain-logs" class="nav-item active">Blockchain Logs</a>
+            </nav>
+
+            <section class="sidebar-panel">
+                <p class="panel-label">Blockchain View</p>
+                <p class="panel-copy">This page isolates the audit trail so you can inspect transaction hashes without the rest of the dashboard mixed in.</p>
+            </section>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow">AI-Powered Anti-Money Laundering System</p>
+                    <h2 id="welcomeTitle">Loading blockchain logs...</h2>
+                </div>
+                <div class="topbar-actions">
+                    <div class="topbar-chip">
+                        <span class="chip-label">Current Risk</span>
+                        <span id="riskBadge" class="status-pill low">Low</span>
+                    </div>
+                    <div class="profile-card">
+                        <div class="avatar">AM</div>
+                        <div>
+                            <p id="profileName" class="profile-name">Analyst</p>
+                            <p id="profileRole" class="profile-role">Compliance Officer</p>
+                        </div>
+                        <a href="/logout" class="logout-link">Logout</a>
+                    </div>
+                </div>
+            </header>
+
+            <section class="page-intro panel-card reveal-card">
+                <div class="section-heading compact">
+                    <div>
+                        <p class="eyebrow">Blockchain Logs</p>
+                        <h3>Immutable Audit Trail</h3>
+                    </div>
+                    <p class="section-copy">Recent AML records are shown with their blockchain-style hash references.</p>
+                </div>
+                <div class="metric-grid compact-metrics">
+                    <article class="metric-card nested-metric info-glow">
+                        <p>Log Entries</p>
+                        <h3 id="logCount">0</h3>
+                    </article>
+                    <article class="metric-card nested-metric">
+                        <p>Total Transactions</p>
+                        <h3 id="totalTransactions">0</h3>
+                    </article>
+                    <article class="metric-card nested-metric warning-glow">
+                        <p>Alerts</p>
+                        <h3 id="alertCount">0</h3>
+                    </article>
+                </div>
+            </section>
+
+            <section class="panel-card reveal-card">
+                <div id="blockchainLogList" class="log-list"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

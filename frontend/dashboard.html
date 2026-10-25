@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI-Powered AML Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div class="brand-block">
+                <div class="brand-mark">AI</div>
+                <div>
+                    <p class="eyebrow">Fintech Security</p>
+                    <h1>AML Sentinel</h1>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="/dashboard" class="nav-item active">Dashboard</a>
+                <a href="/transactions" class="nav-item">Transactions</a>
+                <a href="/alerts" class="nav-item">Alerts</a>
+                <a href="/blockchain-logs" class="nav-item">Blockchain Logs</a>
+            </nav>
+
+            <section class="sidebar-panel">
+                <p class="panel-label">System Pulse</p>
+                <div class="pulse-row">
+                    <span class="pulse-dot"></span>
+                    <span>AI monitoring active</span>
+                </div>
+                <p class="panel-copy">Use the dashboard for the main overview, simulations, KYC checks, and manual AML analysis.</p>
+            </section>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow">AI-Powered Anti-Money Laundering System</p>
+                    <h2 id="welcomeTitle">Loading dashboard...</h2>
+                </div>
+                <div class="topbar-actions">
+                    <div class="topbar-chip">
+                        <span class="chip-label">Current Risk</span>
+                        <span id="riskBadge" class="status-pill low">Low</span>
+                    </div>
+                    <div class="profile-card">
+                        <div class="avatar">AM</div>
+                        <div>
+                            <p id="profileName" class="profile-name">Analyst</p>
+                            <p id="profileRole" class="profile-role">Compliance Officer</p>
+                        </div>
+                        <a href="/logout" class="logout-link">Logout</a>
+                    </div>
+                </div>
+            </header>
+
+            <section class="hero-panel reveal-card">
+                <div>
+                    <p class="eyebrow">Live Overview</p>
+                    <h3>Detect risk early, review alerts faster, and keep every audit trail visible.</h3>
+                    <p class="hero-copy">This page gives you the quick summary plus the tools to generate transactions, validate KYC, and analyze a new transfer.</p>
+                </div>
+                <div class="hero-stats">
+                    <div>
+                        <span class="hero-stat-label">Portfolio Balance</span>
+                        <strong id="balanceValue">Rs. 0.00</strong>
+                    </div>
+                    <div>
+                        <span class="hero-stat-label">Total Monitored Volume</span>
+                        <strong id="volumeValue">Rs. 0.00</strong>
+                    </div>
+                    <p id="heroMessage" class="hero-message">Waiting for transaction data.</p>
+                </div>
+            </section>
+
+            <section class="metric-grid">
+                <article class="metric-card reveal-card">
+                    <p>Total Transactions</p>
+                    <h3 id="totalTransactions">0</h3>
+                    <span>Processed by the AML engine</span>
+                </article>
+                <article class="metric-card reveal-card warning-glow">
+                    <p>Suspicious Transactions</p>
+                    <h3 id="suspiciousCount">0</h3>
+                    <span>Flagged for review</span>
+                </article>
+                <article class="metric-card reveal-card info-glow">
+                    <p>Alerts</p>
+                    <h3 id="alertCount">0</h3>
+                    <span>Priority cases in queue</span>
+                </article>
+            </section>
+
+            <section class="content-grid lower-grid">
+                <article class="panel-card reveal-card">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Simulation</p>
+                            <h3>Generate Demo Activity</h3>
+                        </div>
+                    </div>
+                    <form id="simulationForm" class="action-form inline-form">
+                        <label>
+                            Transactions
+                            <input type="number" name="sample_size" min="1" max="20" value="8" required />
+                        </label>
+                        <button type="submit" class="primary-btn">Run Simulation</button>
+                    </form>
+                    <p id="simulationMessage" class="feedback-message"></p>
+                </article>
+
+                <article class="panel-card reveal-card">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">KYC</p>
+                            <h3>Customer Verification</h3>
+                        </div>
+                    </div>
+                    <form id="kycForm" class="action-form">
+                        <input type="text" name="full_name" placeholder="Full name" required />
+                        <input type="email" name="email" placeholder="Email" required />
+                        <input type="text" name="government_id" placeholder="Government ID" required />
+                        <button type="submit" class="primary-btn">Validate KYC</button>
+                    </form>
+                    <p id="kycMessage" class="feedback-message"></p>
+                </article>
+            </section>
+
+            <section class="content-grid lower-grid">
+                <article class="panel-card reveal-card">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Manual Analysis</p>
+                            <h3>Analyze New Transaction</h3>
+                        </div>
+                    </div>
+                    <form id="transactionForm" class="action-form">
+                        <input type="text" name="receiver" placeholder="Receiver wallet" required />
+                        <input type="number" name="amount" min="1" step="0.01" placeholder="Amount in INR" required />
+                        <input type="text" name="country" placeholder="Country" required />
+                        <input type="text" name="transaction_type" placeholder="Type: transfer, withdrawal, deposit" required />
+                        <button type="submit" class="primary-btn">Analyze and Save</button>
+                    </form>
+                    <p id="transactionMessage" class="feedback-message"></p>
+                </article>
+
+                <article class="panel-card reveal-card">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Analysis Result</p>
+                            <h3>Latest AML Decision</h3>
+                        </div>
+                    </div>
+                    <div id="analysisPanel" class="analysis-empty">Submit a transaction to display the risk summary, balance impact, and model decision.</div>
+                </article>
+            </section>
+
+            <section class="content-grid lower-grid">
+                <article class="panel-card reveal-card">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Quick Access</p>
+                            <h3>Open Dedicated Pages</h3>
+                        </div>
+                    </div>
+                    <div class="shortcut-grid">
+                        <a class="shortcut-card" href="/transactions">
+                            <span class="shortcut-title">Transactions</span>
+                            <span class="shortcut-copy">View the full transaction table on its own page.</span>
+                        </a>
+                        <a class="shortcut-card" href="/alerts">
+                            <span class="shortcut-title">Alerts</span>
+                            <span class="shortcut-copy">Review all suspicious transactions separately.</span>
+                        </a>
+                        <a class="shortcut-card" href="/blockchain-logs">
+                            <span class="shortcut-title">Blockchain Logs</span>
+                            <span class="shortcut-copy">Open the audit trail with hash records.</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="panel-card reveal-card">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Recent Alerts</p>
+                            <h3>Latest Flagged Cases</h3>
+                        </div>
+                    </div>
+                    <div id="alertsList" class="alerts-list compact-list"></div>
+                </article>
+            </section>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

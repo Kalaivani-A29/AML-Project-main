@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register | AML Blockchain</title>
+    <link rel="stylesheet" href="auth.css" />
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="/login" class="brand">AML Blockchain</a>
+        <div class="nav-links">
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        </div>
+    </nav>
+
+    <main class="auth-page">
+        <section class="auth-panel wide">
+            <div>
+                <p class="eyebrow">Create Account</p>
+                <h1>Register for the AML Demo</h1>
+                <p class="subtitle">
+                    Create a simple account with a starting balance in Indian rupees so you can test AML transactions.
+                </p>
+            </div>
+
+            <form id="registerForm" class="auth-form">
+                <label>
+                    Username
+                    <input type="text" name="username" placeholder="Choose username" required />
+                </label>
+                <label>
+                    Email
+                    <input type="email" name="email" placeholder="Enter email" required />
+                </label>
+                <label>
+                    Password
+                    <input type="password" name="password" placeholder="Choose password" required />
+                </label>
+                <label>
+                    Starting Balance (INR)
+                    <input type="number" name="balance" min="100" step="0.01" value="25000" required />
+                </label>
+                <button type="submit" class="primary-btn">Register</button>
+                <p id="authMessage" class="feedback-message" aria-live="polite"></p>
+            </form>
+
+            <p class="footer-copy">
+                Already registered? <a href="/login">Go to login</a>
+            </p>
+        </section>
+    </main>
+
+    <script src="auth.js"></script>
+</body>
+</html>

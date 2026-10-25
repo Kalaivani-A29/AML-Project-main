@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | AML Blockchain</title>
+    <link rel="stylesheet" href="auth.css" />
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="/login" class="brand">AML Blockchain</a>
+        <div class="nav-links">
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        </div>
+    </nav>
+
+    <main class="auth-page">
+        <section class="auth-panel">
+            <div>
+                <p class="eyebrow">Welcome Back</p>
+                <h1>Login to Your AML Dashboard</h1>
+                <p class="subtitle">
+                    Sign in to view your wallet balance, recent transactions, and AML risk level.
+                </p>
+            </div>
+
+            <form id="loginForm" class="auth-form">
+                <label>
+                    Username
+                    <input type="text" name="username" placeholder="Enter username" required />
+                </label>
+                <label>
+                    Password
+                    <input type="password" name="password" placeholder="Enter password" required />
+                </label>
+                <button type="submit" class="primary-btn">Login</button>
+                <p id="authMessage" class="feedback-message" aria-live="polite"></p>
+            </form>
+
+            <p class="footer-copy">
+                New here? <a href="/register">Create an account</a>
+            </p>
+        </section>
+    </main>
+
+    <script src="auth.js"></script>
+</body>
+</html>

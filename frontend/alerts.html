@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alerts | AML Sentinel</title>
+    <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div class="brand-block">
+                <div class="brand-mark">AI</div>
+                <div>
+                    <p class="eyebrow">Fintech Security</p>
+                    <h1>AML Sentinel</h1>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="/dashboard" class="nav-item">Dashboard</a>
+                <a href="/transactions" class="nav-item">Transactions</a>
+                <a href="/alerts" class="nav-item active">Alerts</a>
+                <a href="/blockchain-logs" class="nav-item">Blockchain Logs</a>
+            </nav>
+
+            <section class="sidebar-panel">
+                <p class="panel-label">Alerts View</p>
+                <p class="panel-copy">This page is focused only on suspicious activity so it is easier to review flagged transactions one by one.</p>
+            </section>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow">AI-Powered Anti-Money Laundering System</p>
+                    <h2 id="welcomeTitle">Loading alerts...</h2>
+                </div>
+                <div class="topbar-actions">
+                    <div class="topbar-chip">
+                        <span class="chip-label">Current Risk</span>
+                        <span id="riskBadge" class="status-pill low">Low</span>
+                    </div>
+                    <div class="profile-card">
+                        <div class="avatar">AM</div>
+                        <div>
+                            <p id="profileName" class="profile-name">Analyst</p>
+                            <p id="profileRole" class="profile-role">Compliance Officer</p>
+                        </div>
+                        <a href="/logout" class="logout-link">Logout</a>
+                    </div>
+                </div>
+            </header>
+
+            <section class="page-intro panel-card reveal-card">
+                <div class="section-heading compact">
+                    <div>
+                        <p class="eyebrow">Alerts</p>
+                        <h3>Flagged Transactions Queue</h3>
+                    </div>
+                    <p class="section-copy">Only suspicious transactions are shown here, with warning styling for faster attention.</p>
+                </div>
+                <div class="metric-grid compact-metrics">
+                    <article class="metric-card nested-metric warning-glow">
+                        <p>Suspicious Transactions</p>
+                        <h3 id="suspiciousCount">0</h3>
+                    </article>
+                    <article class="metric-card nested-metric info-glow">
+                        <p>Alerts</p>
+                        <h3 id="alertCount">0</h3>
+                    </article>
+                    <article class="metric-card nested-metric">
+                        <p>Total Transactions</p>
+                        <h3 id="totalTransactions">0</h3>
+                    </article>
+                </div>
+            </section>
+
+            <section class="panel-card reveal-card">
+                <div id="alertsList" class="alerts-list"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
